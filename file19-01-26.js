@@ -24,23 +24,23 @@
 // console.log(output);
 
 //Q.3 Given an array of objects, remove duplicates based on a specific key (id).
-let Input = [
-  { id: 1, name: 'A' },
-  { id: 2, name: 'B' },
-  { id: 1, name: 'C' }
-]
-let reso = []
-for(let i= 0; i<Input.length; i++){
-  console.log(Input[i]);  
-  if(reso.length === 0){
-    reso.push(Input[i])
-  }
-  else{
-    if(reso[0].id !== Input[i].id){
-      reso.push(Input[i]) 
-    }
-  }
-}
+// let Input = [
+//   { id: 1, name: 'A' },
+//   { id: 2, name: 'B' },
+//   { id: 1, name: 'C' }
+// ]
+// let reso = []
+// for(let i= 0; i<Input.length; i++){
+//   console.log(Input[i]);  
+//   if(reso.length === 0){
+//     reso.push(Input[i])
+//   }
+//   else{
+//     if(reso[0].id !== Input[i].id){
+//       reso.push(Input[i]) 
+//     }
+//   }
+// }
 // go for some() function my boi coz it checks on all Element.
 // Output: [
 //   { id: 1, name: 'A' },
@@ -55,3 +55,25 @@ for(let i= 0; i<Input.length; i++){
 // }),[])
 
 // console.log(arr);
+
+
+const zee = [
+  { name: 'Alice', role: 'admin' },
+  { name: 'Bob', role: 'user' },
+  { name: 'Charlie', role: 'admin' }
+]
+// Output: {
+//   admin: [{ name: 'Alice', role: 'admin' }, { name: 'Charlie', role: 'admin' }],
+//   user: [{ name: 'Bob', role: 'user' }]
+// }
+let data = []
+const group = zee.reduce((acc,curr)=>{
+  if(acc[curr.role]){
+    acc[curr.role].push(curr)
+  }
+  else{
+    acc[curr.role] = curr
+  }
+  return acc
+},{})
+console.log(group);
