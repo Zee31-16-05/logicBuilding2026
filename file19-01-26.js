@@ -29,16 +29,29 @@ let Input = [
   { id: 2, name: 'B' },
   { id: 1, name: 'C' }
 ]
+let reso = []
+for(let i= 0; i<Input.length; i++){
+  console.log(Input[i]);  
+  if(reso.length === 0){
+    reso.push(Input[i])
+  }
+  else{
+    if(reso[0].id !== Input[i].id){
+      reso.push(Input[i]) 
+    }
+  }
+}
+// go for some() function my boi coz it checks on all Element.
 // Output: [
 //   { id: 1, name: 'A' },
 //   { id: 2, name: 'B' }
 // ]
 
-let arr = Input.reduce(((acc,curr)=>{
-    if(!acc.some(obj=> obj.id === curr.id)){
-         acc.push(curr)
-    }
-return acc;
-}),[])
+// let arr = Input.reduce(((acc,curr)=>{
+//     if(!acc.some(obj=> obj.id === curr.id)){
+//          acc.push(curr)
+//     }
+// return acc;
+// }),[])
 
-console.log(arr);
+// console.log(arr);
