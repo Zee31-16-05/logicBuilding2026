@@ -66,14 +66,55 @@ const zee = [
 //   admin: [{ name: 'Alice', role: 'admin' }, { name: 'Charlie', role: 'admin' }],
 //   user: [{ name: 'Bob', role: 'user' }]
 // }
-let data = []
-const group = zee.reduce((acc,curr)=>{
-  if(acc[curr.role]){
-    acc[curr.role].push(curr)
+// let data = []
+// const group = zee.reduce((acc,curr)=>{
+//   if(acc[curr.role]){
+//     acc[curr.role].push(curr)
+//   }
+//   else{
+//     acc[curr.role] = curr
+//   }
+//   return acc
+// },{})
+// console.log(group);
+
+let removeArr =  [
+  { id: 1, name: 'A' },
+  { id: 2, name: 'B' },
+  { id: 1, name: 'C' }
+];
+
+// let finalArr = removeArr.reduce(((acc,curr)=>{
+//   if(!acc.some(obj=> obj.id === curr.id)){
+//     acc.push(curr)
+//   }
+//   return acc
+// }),[])
+// console.log(finalArr);
+
+// [
+//   { id: 1, name: "A" },
+//   { id: 2, name: "B" }
+// ]
+
+// {
+//   1: { id: 1, name: "A" },
+//   2: { id: 2, name: "B" }
+// }
+
+let huu = [
+ { id: 1, name: "A" },
+  { id: 2, name: "B" }
+ ]
+
+ const git = huu.reduce(((acc,curr)=>{
+
+  if(acc[curr]){
+    curr.id = [].push(curr)
   }
   else{
-    acc[curr.role] = curr
+curr.id = acc[curr]
   }
-  return acc
-},{})
-console.log(group);
+return acc
+ }),{})
+console.log(git)
