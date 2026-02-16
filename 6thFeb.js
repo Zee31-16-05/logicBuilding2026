@@ -142,3 +142,35 @@ for(let i =0; i< data.length; i++){
     }
 }
 console.log("new bowl",newData1)
+
+// Input:
+const arr112 = [10, 5, 78, 2, 45];
+
+// Output:
+// 78
+let temp = arr112[0]
+const max = arr112.map((num)=>{
+  if(temp < num){
+    temp = num
+  }
+  
+  return temp
+})
+console.log(temp)
+
+// Input:
+const str = "aabbbc";
+
+// Output:
+// { a: 2, b: 3, c: 1 }
+const countObj = {}
+
+for(let i = 0; i < str.length; i++){
+  if( str[i] in countObj){
+    countObj[str[i]]++
+  }
+  else{
+    countObj[str[i]] = 1
+  }
+}
+console.log(countObj)
