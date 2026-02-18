@@ -143,11 +143,7 @@ for(let i =0; i< data.length; i++){
 }
 console.log("new bowl",newData1)
 
-// Input:
-const arr112 = [10, 5, 78, 2, 45];
 
-// Output:
-// 78
 let temp = arr112[0]
 const max = arr112.map((num)=>{
   if(temp < num){
@@ -174,3 +170,67 @@ for(let i = 0; i < str.length; i++){
   }
 }
 console.log(countObj)
+
+const flatArray = [1,2,[3,4],5,[6,7,8],9];
+const newArray = [];
+for(let i = 0; i < flatArray.length; i++) {
+  if(Array.isArray(flatArray[i])) {
+    for(let j=0; j< flatArray[i].length; j++) {
+      newArray.push(flatArray[i][j]);
+
+    }
+  }
+  else{
+    newArray.push(flatArray[i]);
+  }
+}
+console.log(newArray);sure
+
+
+// Input:
+
+function isAnagram(str1,str2){
+  try{
+    if(str1.length !== str2.length){
+      return "Not anagrams";
+    }
+    else{
+      let obj1 = {}
+      let obj2 = {}
+      //this is for str1
+      for(let i = 0;i < str1.length;i++){
+        if(obj1[str1[i]]){
+          obj1[str1[i]] += 1;
+        }
+        else{
+          obj1[str1[i]] = 1;
+        }
+      }
+
+      //this is for str2
+      for(let j = 0;j < str2.length;j++){
+        if(obj2[str2[j]]){
+          obj2[str2[j]] += 1;
+        }
+        else{
+          obj2[str2[j]] = 1;
+        }
+    }
+
+    //at last comparing both objects values
+    for(let key in obj1){
+      if(obj1[key] !== obj2[key]){
+        return "Not anagrams";
+      
+    }
+    return "Anagrams";
+  }
+  }
+  }
+  catch(err){
+    console.log(err);
+  }
+}
+const result2 = isAnagram("hello","world");
+console.log(result2);
+
