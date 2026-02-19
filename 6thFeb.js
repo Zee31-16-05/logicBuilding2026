@@ -234,3 +234,30 @@ function isAnagram(str1,str2){
 const result2 = isAnagram("hello","world");
 console.log(result2);
 
+
+
+
+const users = [
+  { name: "Zeeshan", role: "admin" },
+  { name: "Ali", role: "user" },
+  { name: "John", role: "admin" }
+];
+
+// Output:
+// {
+//   admin: [{...}, {...}],
+//   user: [{...}]
+// }
+
+const result21 = users.reduce((acc,user)=>{
+  if(user.role in acc){
+    acc[user.role] = [...acc[user.role],user]
+  }  else{
+    acc[user.role] = [user]
+  }
+  return acc
+},{})
+
+console.log(result21)
+
+
