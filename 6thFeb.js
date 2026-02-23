@@ -319,3 +319,25 @@ for(key in obj1){
 }
 const result112 = deepCompare(obj1, obj2)
 console.log(result112);
+
+// print all the non-repeating characters in the string "javascriptisawesome" 
+const nonRepeat = "javascriptisawesome";
+let nonRepeatArr = [];
+const resultNonRepeat = nonRepeat.split("").reduce((acc,ind)=>{
+    
+    if(acc[ind] in acc){
+        acc[ind] +=1
+    }
+    else{
+        acc[ind] = 1
+    }
+    return acc;
+},{})
+// console.log(resultNonRepeat)
+
+for(let key in resultNonRepeat){
+    if(resultNonRepeat[key] === 1){
+        nonRepeatArr.push(key)
+    }
+}
+console.log(nonRepeatArr)
