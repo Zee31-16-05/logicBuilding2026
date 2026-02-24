@@ -341,3 +341,23 @@ for(let key in resultNonRepeat){
     }
 }
 console.log(nonRepeatArr)
+
+const merge = intervals.reduce((acc, int, index) => {
+  const[start,end] = int;
+  if(acc.length === 0)
+{
+    acc.push(int);
+}  
+else{
+  if(start <= acc[acc.length-1][1]){
+    acc[acc.length - 1][1] = Math.max(acc[acc.length - 1][1], end); 
+  }
+  else{
+    acc.push(int);
+  }
+}
+
+
+return acc;
+}, []);
+console.log(merge);
