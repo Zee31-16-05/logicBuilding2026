@@ -19,6 +19,8 @@ console,log("lj ljljl",covered)
 // intervals = [[1,3],[6,9]]
 // newInterval = [2,5]
 //[[1,5],[6,9]]
+
+
 const intervals = [[1,3],[6,9]]
 const newInterval = [7,11]
 
@@ -27,8 +29,8 @@ for(let index = 0; index < intervals.length; index++){
     const [start, end] = newInterval
     const [intervalStart, intervalEnd] = intervals[index]
     if(intervalEnd <= newInterval[1] && intervalStart >= newInterval[0]){
-        covered.push([start, newInterval[1]]);
-        if(intervals[index+1]) covered.push(intervals[index+1]);
+        covered2.push([start, newInterval[1]]);
+        if(intervals[index+1]) covered2.push(intervals[index+1]);
         break;
     } else {
         console.log("cccccc",intervals[index + 1][0])
@@ -39,3 +41,4 @@ for(let index = 0; index < intervals.length; index++){
 }
 }
 console.log("lj ljljl",covered2)
+
