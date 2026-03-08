@@ -42,3 +42,18 @@ for(let index = 0; index < intervals.length; index++){
 }
 console.log("lj ljljl",covered2)
 
+//find the longest substring without repeating characters in a given string
+// Input:  "abcabcbb"
+// Output: 3   // "abc"
+
+const input = "abcabcbb";
+let maxLength = 0;
+let set = new Set();
+for(let i = 0; i<input.length; i++){
+  if(set.has(input[i])){
+    set.clear();
+  }
+  set.add(input[i])
+  maxLength = Math.max(maxLength, set.size);
+}
+console.log(maxLength);
