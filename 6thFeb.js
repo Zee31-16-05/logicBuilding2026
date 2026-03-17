@@ -57,3 +57,28 @@ for(let i = 0; i<input.length; i++){
   maxLength = Math.max(maxLength, set.size);
 }
 console.log(maxLength);
+
+function customParseInt(str)
+{
+if(typeof str !== 'string'){
+  throw new error("Invalid input: Expected a string");
+}
+
+let result = 0; //scoreborad ready
+
+for(let i = 0; i< str.length; i++){
+  const char = str[i]
+  const value = char.charCodeAt()- '0'.charCodeAt();
+
+  if(value < 0 || value > 9){
+    throw new error("Invalid input: String contains non-numeric characters");
+  } 
+result = result * 10 + value; //scoreboard update
+}
+
+return result;
+}
+
+
+console.log(customParseInt("123")); 
+// Output: 123 (number format not string)
